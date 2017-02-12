@@ -1,0 +1,26 @@
+{
+  "name": "chat",
+  "version": "0.1.0",
+  "description": "A simple chat application using Node.js and PostgreSQL",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint .",
+    "test": "mocha --recursive ./test/unit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/antonio-muniz/chat.git"
+  },
+  "keywords": [
+    "chat",
+    "node",
+    "postgres"
+  ],
+  "author": "Antonio H. N. Muniz",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^3.15.0",
+    "mocha": "^3.2.0",
+    "nodemon": "^1.11.0"
+  }
+}
