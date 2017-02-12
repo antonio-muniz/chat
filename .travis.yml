@@ -3,4 +3,3 @@ node_js:
   - "6.9"
 services:
   - docker
-script: ./scripts/travis-step-script.sh
