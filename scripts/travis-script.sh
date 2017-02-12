@@ -10,7 +10,7 @@ cd server
 npm run lint
 
 # Run unit tests
-npm ./test/unit
+npm test
 
 # Return to root folder
 cd ..
