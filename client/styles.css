@@ -1,0 +1,61 @@
+#wrapper, body, html {
+  height: 100%;
+}
+
+body {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+#wrapper {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  background-color: #999999;
+}
+
+.panel {
+  display: flex;
+  flex-direction: column;
+}
+
+#side-panel {
+  background-color: #CCCCCC;
+  flex: 0 1 22em;
+  order: 1;
+}
+
+#side-panel > header {
+  background-color: green;
+  flex: 0 0 4em;
+}
+
+#chat-list {
+  background-color: yellow;
+  flex: 2 1;
+}
+
+#main-panel {
+  background-color: #999999;
+  flex: 1 1;
+  order: 2;
+}
+
+#main-panel > header {
+  background-color: red;
+  flex: 0 0 4em;
+  order: 1;
+}
+
+#message-area {
+  background-color: blue;
+  flex: 1;
+  order: 2;
+}
+
+#message-input-area {
+  background-color: purple;
+  flex: 0 0 4em;
+  order: 3;
+}

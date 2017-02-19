@@ -1,6 +1,6 @@
 # /bin/bash
 
-# -e: Exit on error, -v: print script lines before execute them
+# -e: Exit on error, -v: print script lines before executing them
 set -ev
 
 # Enter server-side code folder
