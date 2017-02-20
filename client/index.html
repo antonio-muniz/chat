@@ -11,13 +11,41 @@
 <body>
   <div id="wrapper">
     <section id="side-panel" class="panel">
-      <header></header>
-      <section id="chat-list"></section>
+      <header>
+        <div id="logo">
+          <img src="img/logo-56x56.png" alt='Logo' />
+        </div>
+        <div id="user-name-display"><span>antonio.muniz</span></div>
+        <div id="settings-button" title="Settings"><img src="img/settings-32x32.png" alt='Settings'></img>
+        </div>
+      </header>
+      <section id="chat-list">
+        <div id="search-box">
+          <div><img src="img/search-16x16.png" /></div>
+          <input type="text" placeholder="Search user by name" maxlength="32" />
+        </div>
+        <ul>
+          <li class="unselected-chat">public</li>
+          <li class="selected-chat">other.user</li>
+        </ul>
+      </section>
     </section>
     <section id="main-panel" class="panel">
-      <header></header>
-      <section id="message-area"></section>
-      <section id="message-input-area"></section>
+      <header>
+        <div id="partner-name-display"><span>other.user</span></div>
+        <div id="close-chat-button"><img src="img/close-32x32.png" alt="Close chat" title="Close chat"></div>
+      </header>
+      <section id="message-area">
+        <article class="sent-message">
+          <p>Hello! :)</p>
+        </article>
+        <article class="received-message">
+          <p>Hi! How are you?</p>
+        </article>
+      </section>
+      <section id="message-input-area">
+        <textarea id="message-input" placeholder="Enter your message"></textarea>
+      </section>
     </section>
   </div>
 </body>
