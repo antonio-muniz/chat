@@ -13,10 +13,9 @@ app.use(express.static('client'));
 app.use(bodyParser.json());
 
 // Routes
-app.get('/status', homeController);
+app.use('/api/v1/status', homeController);
 
 // Exit middlewares
-
 
 
 module.exports = app;
