@@ -11,6 +11,6 @@ module.exports = () => {
     },
     log: {
     },
-    port: process.env.CHAT_SERVER_PORT || 3000
+    port: process.env.PORT || 3000
   };
 };
