@@ -1,8 +1,6 @@
 language: node_js
 node_js:
   - "6.9"
-services:
-  - docker
 install:
   - ./scripts/travis-install.sh
 script:
