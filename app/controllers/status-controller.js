@@ -1,8 +1,10 @@
 'use strict';
 
+const cool = require('cool-ascii-faces');
 const express = require('express');
+
+const appInfo = require('../../package.json');
 const postgres = require('../../utils/postgres/postgres-client');
-const serverInfo = require('../../package.json');
 
 let router = express.Router();
 
@@ -12,11 +14,14 @@ router.get('/', (req, res, next) => {
     .then((succeeded) => {
       let status = (succeeded) ? 'OK' : 'SERVICE_UNAVAILABLE';
       res.json({
-        version: serverInfo.version,
-        status
+        version: appInfo.version,
+        status,
+        serverTime: new Date(),
+        mood: cool()
       });
       next();
-    });
+    })
+    .catch(next);
 
 });
 
