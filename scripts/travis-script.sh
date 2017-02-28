@@ -9,14 +9,14 @@ npm run lint
 # Start PostgreSQL container
 docker run -d \
   --name postgres \
-  -p 5432:5432 \
+  -p 5433:5432 \
   -e POSTGRES_USER=chat \
   -e POSTGRES_DB=chat \
   -e POSTGRES_PASSWORD=123456 \
   postgres:9.6.2  
 
 POSTGRES_CONTAINER_IP=`docker inspect --format='{{ .NetworkSettings.IPAddress }}' postgres`
-DATABASE_URL=postgres://chat:123456@${POSTGRES_CONTAINER_IP}:5432/chat
+DATABASE_URL=postgres://chat:123456@${POSTGRES_CONTAINER_IP}:5433/chat
 
 # Run unit tests
 npm test
