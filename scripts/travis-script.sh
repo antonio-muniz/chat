@@ -15,7 +15,9 @@ docker run -d \
   postgres:9.6.2  
 
 POSTGRES_CONTAINER_IP=`docker inspect --format='{{ .NetworkSettings.IPAddress }}' postgres`
+echo ${POSTGRES_CONTAINER_IP}
 DATABASE_URL=postgres://chat:123456@${POSTGRES_CONTAINER_IP}:5432/chat
+echo ${DATABASE_URL}
 
 # Run unit tests
 npm test
