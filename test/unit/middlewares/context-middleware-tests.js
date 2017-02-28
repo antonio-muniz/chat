@@ -7,7 +7,6 @@ const should = require('should');
 const uuid = require('uuid').v4;
 
 const contextMiddleware = require('../../../app/middlewares/context-middleware');
-const createLogger = require('../../../utils/logging/logger');
 
 describe('context-middleware', function () {
 
@@ -32,7 +31,7 @@ describe('context-middleware', function () {
         let logger = context.get('logger');
         should.exist(logger);
       })
-      .end(done)
+      .end(done);
   });
 
   it('should capture X-Request-ID header into the context', function (done) {

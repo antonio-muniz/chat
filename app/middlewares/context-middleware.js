@@ -1,7 +1,7 @@
 'use strict';
 
 let createContext = require('../../utils/context/context');
-let createLogger = require('../../utils/logging/logger')
+let createLogger = require('../../utils/logging/logger');
 
 module.exports = () => {
 

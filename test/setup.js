@@ -14,7 +14,7 @@ before(function () {
   }
   catch (err) {
     fs.mkdirSync('./logs/');
-  };
+  }
 
   logger.init(config.logging);
 

@@ -9,5 +9,5 @@ logger.init(config.logging);
 postgres.init(config.database);
 
 app.listen(config.port, () => {
-  logger('chat-app').info(`Server listening on port ${config.port}`);
+  console.info(`Server listening on port ${config.port}`);
 });

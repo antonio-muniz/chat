@@ -8,13 +8,13 @@ let logger;
 module.exports = (id) => {
   return {
     error: (message, details) => {
-      logger.log('error', message, { id, details })
+      logger.log('error', message, { id, details });
     },
     info: (message, details) => {
-      logger.log('info', message, { id, details })
+      logger.log('info', message, { id, details });
     },
     warn: (message, details) => {
-      logger.log('warn', message, { id, details })
+      logger.log('warn', message, { id, details });
     }
   };
 };

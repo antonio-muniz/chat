@@ -6,6 +6,7 @@
   "scripts": {
     "lint": "eslint .",
     "migrate": "node ./app/migrate",
+    "refresh": "nodemon --exec \"npm run lint && npm test && npm start\"",
     "start": "node ./start",
     "test": "mocha --recursive ./test"
   },

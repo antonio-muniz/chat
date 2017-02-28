@@ -1,7 +1,5 @@
 'use strict';
 
-const uuid = require('uuid').v4;
-
 module.exports = (id) => {
   let vars = {};
   return {
@@ -10,5 +8,5 @@ module.exports = (id) => {
       vars[key] = value;
     },
     get: (key) => vars[key]
-  }
-}
+  };
+};
