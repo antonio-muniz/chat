@@ -3,6 +3,8 @@ node_js:
   - "6.9"
 services:
   - docker
+addons:
+  - postgresql: "9.6"
 install:
   - ./scripts/travis-install.sh
 script:

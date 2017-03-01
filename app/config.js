@@ -2,7 +2,7 @@
 
 module.exports = () => {
   return {
-    database: process.env.DATABASE_URL || 'postgres://chat:123456@localhost:5432/chat',
+    database: process.env.DATABASE_URL || 'postgres://postgres:@localhost:5432/chat',
     environment: process.env.NODE_ENV || 'development',
     logging: {
       mode: process.env.LOG_MODE || 'file',
