@@ -15,7 +15,7 @@ docker run -d \
   -e POSTGRES_PASSWORD=123456 \
   postgres:9.6.2  
 
-DATABASE_URL=postgres://chat:123456@localhost:5433/chat
+DATABASE_URL=postgres://chat:123456@127.0.0.1:5433/chat
 
 # Run unit tests
 npm test
