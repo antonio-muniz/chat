@@ -23,19 +23,14 @@ docker run -d \
 
 export DATABASE_URL=postgres://$CHAT_POSTGRES_USER:$CHAT_POSTGRES_PASSWORD@$CHAT_POSTGRES_HOST:$CHAT_POSTGRES_PORT/$CHAT_POSTGRES_DATABASE
 
-echo $CHAT_POSTGRES_HOST
-echo $CHAT_POSTGRES_PORT
-echo $CHAT_POSTGRES_DATABASE
-echo $CHAT_POSTGRES_USER
-echo $CHAT_POSTGRES_PASSWORD
-
 # Wait until PostgreSQL is available
 export PGPASSWORD=$CHAT_POSTGRES_PASSWORD
-until psql --host="$CHAT_POSTGRES_HOST" \
-  --port="$CHAT_POSTGRES_PORT" \
-  --username="$CHAT_POSTGRES_USER" \
+until psql &>/dev/null \
+  --host=$CHAT_POSTGRES_HOST \
+  --port=$CHAT_POSTGRES_PORT \
+  --username=$CHAT_POSTGRES_USER \
   --command='\l' \
-  "$CHAT_POSTGRES_DATABASE";
+  $CHAT_POSTGRES_DATABASE;
 do
   echo "PostgreSQL is down... Waiting..."
   sleep 1
