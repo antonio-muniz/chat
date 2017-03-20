@@ -25,12 +25,7 @@ export DATABASE_URL=postgres://$POSTGRES_USER:$POSTGRES_PASSWORD@$POSTGRES_HOST:
 
 # Wait until PostgreSQL is available
 export PGPASSWORD=$POSTGRES_PASSWORD
-until psql \
-  -h $POSTGRES_HOST \
-  -p $POSTGRES_PORT \
-  -U $POSTGRES_USER \
-  -c '\l' \
-  $POSTGRES_DATABASE;
+until psql -h $POSTGRES_HOST -p $POSTGRES_PORT -U $POSTGRES_USER -c '\l' $POSTGRES_DATABASE;
 do
   echo "PostgreSQL is down... Waiting..."
   sleep 1
