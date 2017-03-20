@@ -25,7 +25,7 @@ export DATABASE_URL=postgres://$POSTGRES_USER:$POSTGRES_PASSWORD@$POSTGRES_HOST:
 
 # Wait until PostgreSQL is available
 export PGPASSWORD=$POSTGRES_PASSWORD
-until psql &>/dev/null \
+until psql \
   -h $POSTGRES_HOST \
   -p $POSTGRES_PORT \
   -U $POSTGRES_USER \
@@ -37,5 +37,5 @@ do
 done
 echo "PostgreSQL is up!"
 
-# Run unit tests
+# Run tests
 npm test
