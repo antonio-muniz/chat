@@ -6,11 +6,11 @@ set -ev
 # Check code standards
 npm run lint
 
-set CHAT_POSTGRES_HOST=0.0.0.0
-set CHAT_POSTGRES_PORT=5433
-set CHAT_POSTGRES_DATABASE=chat
-set CHAT_POSTGRES_USER=chat
-set CHAT_POSTGRES_PASSWORD=123456
+export CHAT_POSTGRES_HOST=0.0.0.0
+export CHAT_POSTGRES_PORT=5433
+export CHAT_POSTGRES_DATABASE=chat
+export CHAT_POSTGRES_USER=chat
+export CHAT_POSTGRES_PASSWORD=123456
 
 # Start PostgreSQL container
 docker run -d \
