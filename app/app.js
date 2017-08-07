@@ -2,13 +2,15 @@
 
 const bodyParser = require('body-parser');
 const express = require('express');
+const errorizer = require('errorizer');
+
+const errors = require('./errors');
 
 // Controllers
 const statusController = require('./controllers/status-controller');
 
 // Middlewares
 const contextMiddleware = require('./middlewares/context-middleware');
-const errorMiddleware = require('./middlewares/error-middleware');
 
 let app = express();
 
@@ -19,8 +21,11 @@ app.use(bodyParser.json());
 
 // Routes
 app.use('/api/v1/status', statusController);
+app.get('/users', (req, res, next) => {
+  next('USER_ALREADY_EXISTS');
+});
 
 // Exit middlewares
-app.use(errorMiddleware());
+app.use(errorizer(errors));
 
 module.exports = app;
