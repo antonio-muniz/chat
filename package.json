@@ -5,8 +5,10 @@
   "main": "index.js",
   "scripts": {
     "deploy": "git push heroku master",
+    "dev": "nodemon --ignore dist/code.js --exec npm run start",
     "lint": "eslint .",
-    "start": "npx webpack && nodemon ./start",
+    "pack": "webpack",
+    "start": "node ./start",
     "test": "mocha --recursive ./test"
   },
   "repository": {
