@@ -3,13 +3,17 @@
     <head>
         <title>Chat</title>
         <script type="text/javascript" src="code.js"></script>
+        <script src="https://apis.google.com/js/platform.js" async defer></script>
+        <meta name="google-signin-client_id" content="334210818296-ho0vrcbqh118et53vm2s3ujhhli9lc2k.apps.googleusercontent.com">
     </head>
     <body>
         <div id="window">
             <header>Chat</header>
+            <div id="google_login_button" class="g-signin2" data-onsuccess="onGoogleSignIn"></div>
+            <div id="user_info"></div>
             <div id="message_panel"></div>
             <div id="command_panel">
-                <input id="message_input" type=text placeholder="Enter a message" />
+                <input id="message_input" type=text placeholder="Enter a message" disabled/>
             </div>
         </div>
     </body>

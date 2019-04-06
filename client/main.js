@@ -24,3 +24,20 @@ window.addEventListener('load', () => {
     messageInput.value = '';
   });
 });
+
+function onGoogleSignIn(googleUser) { // eslint-disable-line no-unused-vars
+  let profile = googleUser.getBasicProfile();
+
+  let picture = document.createElement('img');
+  picture.src = profile.getImageUrl();
+
+  let name = document.createElement('span');
+  name.innerHTML = profile.getName();
+
+  let googleLoginButton = document.getElementById('google_login_button');
+  googleLoginButton.hidden = true;
+
+  let userInfo = document.getElementById('user_info');
+  userInfo.appendChild(picture);
+  userInfo.appendChild(name);
+}
