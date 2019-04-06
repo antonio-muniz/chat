@@ -2,6 +2,8 @@
 
 const server = require('./app/server');
 
-server.listen(80, () => {
-  console.info('Server listening on port 80');
+let port = Number.parseInt(process.env.PORT || '8080');
+
+server.listen(port, () => {
+  console.info(`Server listening on port ${port}`);
 });
