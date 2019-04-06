@@ -25,19 +25,29 @@ window.addEventListener('load', () => {
   });
 });
 
-function onGoogleSignIn(googleUser) { // eslint-disable-line no-unused-vars
+window.onGoogleSignIn = (googleUser) => { // eslint-disable-line no-unused-vars
   let profile = googleUser.getBasicProfile();
+
+  console.log(JSON.stringify(profile));
 
   let picture = document.createElement('img');
   picture.src = profile.getImageUrl();
 
+  console.log(picture);
+
   let name = document.createElement('span');
   name.innerHTML = profile.getName();
+
+  console.log(name);
 
   let googleLoginButton = document.getElementById('google_login_button');
   googleLoginButton.hidden = true;
 
+  console.log(googleLoginButton);
+
   let userInfo = document.getElementById('user_info');
   userInfo.appendChild(picture);
   userInfo.appendChild(name);
+
+  console.log(userInfo);
 }
