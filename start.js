@@ -1,7 +1,7 @@
 'use strict';
 
-const app = require('./app/app');
+const server = require('./app/server');
 
-app.listen(8080, () => {
+server.listen(8080, () => {
   console.info('Server listening on port 8080');
 });
