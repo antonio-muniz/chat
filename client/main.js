@@ -7,7 +7,7 @@ window.addEventListener('load', () => {
     messageInput = document.getElementById('message_input');
     messagePanel = document.getElementById('message_panel');
 
-    let socket = io('http://localhost:8080');
+    let socket = io(window.location.href);
     socket.on('connect', () => {
         console.log('Connected to server!');
     });
