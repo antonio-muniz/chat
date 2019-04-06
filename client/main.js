@@ -13,12 +13,13 @@ window.addEventListener('load', () => {
   socket.on('connect', () => {
     console.log('Connected to server!');
   });
+  socket.on('MESSAGE_RECEIVED', ({ text }) => {
+    let message = document.createElement('p');
+    message.innerHTML = text;
+    messagePanel.appendChild(message);
+  });
   messageInput.addEventListener('keyup', (event) => {
     if (event.key != 'Enter') return;
-
-    let message = document.createElement('p');
-    message.innerHTML = messageInput.value;
-    messagePanel.appendChild(message);
     socket.emit('MESSAGE_SENT', { text: messageInput.value });
     messageInput.value = '';
   });

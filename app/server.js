@@ -12,7 +12,8 @@ let socketer = socketIO(server);
 socketer.on('connection', (socket) => {
   console.log('A client is connected!');
   socket.on('MESSAGE_SENT', (message) => {
-    console.log('The client has sent a message: ' + message.text);
+    console.log('A client has sent a message: ' + message.text);
+    socketer.sockets.emit('MESSAGE_RECEIVED', message);
   });
 });
 
