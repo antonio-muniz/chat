@@ -3,7 +3,8 @@ module.exports = {
   'env': {
     'node': true,
     'es6': true,
-    'browser': true
+    'browser': true,
+    'mocha': true
   },
   'rules': {
     'max-len': [2, 120, 2],
