@@ -14,10 +14,10 @@ window.addEventListener('load', () => {
   socket.on('connect', () => {
     console.log('Connected to server!');
   });
-  socket.on('MESSAGE_RECEIVED', ({ text, sender }) => {
-    let message = document.createElement('p');
-    message.innerHTML = `${sender.name}<br />${text}`;
-    messagePanel.appendChild(message);
+  socket.on('MESSAGE_RECEIVED', (message) => {
+    let messageElement = document.createElement('p');
+    messageElement.innerHTML = `${message.sender.name}<br />${text}`;
+    messagePanel.appendChild(messageElement);
   });
   messageInput.addEventListener('keyup', (event) => {
     if (event.key != 'Enter') return;
@@ -26,7 +26,8 @@ window.addEventListener('load', () => {
       sender: {
         id: profile.getId(),
         name: profile.getName()
-      }
+      },
+      sendingTime: new Date().toISOString()
     });
     messageInput.value = '';
   });
