@@ -4,6 +4,7 @@ const io = require('socket.io-client');
 
 let messageInput;
 let messagePanel;
+let profile;
 
 window.addEventListener('load', () => {
   messageInput = document.getElementById('message_input');
@@ -13,23 +14,26 @@ window.addEventListener('load', () => {
   socket.on('connect', () => {
     console.log('Connected to server!');
   });
-  socket.on('MESSAGE_RECEIVED', ({ text }) => {
+  socket.on('MESSAGE_RECEIVED', ({ text, sender }) => {
     let message = document.createElement('p');
-    message.innerHTML = text;
+    message.innerHTML = `${sender.name}<br />${text}`;
     messagePanel.appendChild(message);
   });
   messageInput.addEventListener('keyup', (event) => {
     if (event.key != 'Enter') return;
-    socket.emit('MESSAGE_SENT', { text: messageInput.value });
+    socket.emit('MESSAGE_SENT', {
+      text: messageInput.value,
+      sender: {
+        id: profile.getId(),
+        name: profile.getName()
+      }
+    });
     messageInput.value = '';
   });
 });
 
 window.onGoogleSignIn = (googleUser) => { // eslint-disable-line no-unused-vars
-  console.log(JSON.stringify(googleUser));
-  console.log(googleUser.constructor);
-
-  let profile = googleUser.getBasicProfile();
+  profile = googleUser.getBasicProfile();
 
   let picture = document.createElement('img');
   picture.src = profile.getImageUrl();
@@ -45,4 +49,4 @@ window.onGoogleSignIn = (googleUser) => { // eslint-disable-line no-unused-vars
   userInfo.appendChild(name);
 
   messageInput.disabled = false;
-}
+};
