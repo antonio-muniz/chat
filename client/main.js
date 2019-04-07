@@ -26,6 +26,8 @@ window.addEventListener('load', () => {
 });
 
 window.onGoogleSignIn = (googleUser) => { // eslint-disable-line no-unused-vars
+  console.log(JSON.stringify(googleUser));
+
   let profile = googleUser.getBasicProfile();
 
   let picture = document.createElement('img');
