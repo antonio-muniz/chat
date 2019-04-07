@@ -16,7 +16,7 @@ window.addEventListener('load', () => {
   });
   socket.on('MESSAGE_RECEIVED', (message) => {
     let messageElement = document.createElement('p');
-    messageElement.innerHTML = `${message.sender.name}<br />${text}`;
+    messageElement.innerHTML = `${message.sender.name}<br />${message.text}`;
     messagePanel.appendChild(messageElement);
   });
   messageInput.addEventListener('keyup', (event) => {
