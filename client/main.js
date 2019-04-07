@@ -27,6 +27,7 @@ window.addEventListener('load', () => {
 
 window.onGoogleSignIn = (googleUser) => { // eslint-disable-line no-unused-vars
   console.log(JSON.stringify(googleUser));
+  console.log(googleUser.constructor);
 
   let profile = googleUser.getBasicProfile();
 
