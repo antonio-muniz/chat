@@ -7,5 +7,5 @@ const view = require('./view');
 window.addEventListener('load', () => {
   let socket = chatServerSocket.create();
   view.registerMessageInputSubmitListener(socket);
-  authentication.registerAuthenticationListener();
+  authentication.registerUserAuthenticationListener();
 });

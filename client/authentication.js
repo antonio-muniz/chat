@@ -3,18 +3,20 @@
 const user = require('./user');
 const view = require('./view');
 
-function registerAuthenticationListener() {
+function registerUserAuthenticationListener() {
   window.onGoogleSignIn = (googleUser) => { // eslint-disable-line no-unused-vars
     view.hideGoogleLoginButton();
   
     let profile = googleUser.getBasicProfile();
-    user.setId(profile.getId());
-    user.setName(profile.getName());
-    user.setImageUrl(profile.getImageUrl());
+    user.setup({
+      id: profile.getId(),
+      name: profile.getName(),
+      imageUrl: profile.getImageUrl()
+    });
   
     view.displayUserInfo();
     view.enableMessageInput();
   };
 }
 
-module.exports = { registerAuthenticationListener };
+module.exports = { registerUserAuthenticationListener };

@@ -1,21 +1,18 @@
 'use strict';
 
-let user = {};
+let user;
+
+function setup({ id, name, imageUrl }) {
+  user = { id, name, imageUrl };
+}
 
 function getId() { return user.id; }
-function setId(id) { user.id = id; }
-
 function getName() { return user.name; }
-function setName(name) { user.name = name; }
-
 function getImageUrl() { return user.imageUrl; }
-function setImageUrl(imageUrl) { user.imageUrl = imageUrl; }
 
 module.exports = {
+  setup,
   getId,
-  setId,
   getName,
-  setName,
-  getImageUrl,
-  setImageUrl
+  getImageUrl
 };
