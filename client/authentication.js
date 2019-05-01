@@ -1,5 +1,8 @@
 'use strict';
 
+const user = require('./user');
+const view = require('./view');
+
 function registerAuthenticationListener() {
   window.onGoogleSignIn = (googleUser) => { // eslint-disable-line no-unused-vars
     view.hideGoogleLoginButton();
