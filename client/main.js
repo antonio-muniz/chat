@@ -1,11 +1,11 @@
 'use strict';
 
 const authentication = require('./authentication');
-const chatServerSocket = require('./transport/socket/chat_server/socket');
+const setupChatSocket = require('./transport/socket/setup');
 const view = require('./view');
 
 window.addEventListener('load', () => {
-  chatServerSocket.initialize();
+  setupChatSocket();
   view.registerMessageInputSubmitListener();
   authentication.registerUserAuthenticationListener();
 });
