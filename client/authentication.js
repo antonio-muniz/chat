@@ -4,7 +4,7 @@ const user = require('./user');
 const view = require('./view');
 
 function registerUserAuthenticationListener() {
-  window.onGoogleSignIn = (googleUser) => { // eslint-disable-line no-unused-vars
+  window.onGoogleSignIn = (googleUser) => {
     view.hideGoogleLoginButton();
   
     let profile = googleUser.getBasicProfile();

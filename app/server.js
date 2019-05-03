@@ -2,19 +2,12 @@
 
 const express = require('express');
 const http = require('http');
-const socketIO = require('socket.io');
+const socketHub = require('./transport/socket/chat_client/socket_hub');
 
 let app = express();
 app.use(express.static('dist'));
 
 let server = http.createServer(app);
-let socketer = socketIO(server);
-socketer.on('connection', (socket) => {
-  console.log('A client is connected!');
-  socket.on('MESSAGE_SENT', (message) => {
-    console.log(`${message.sender.name} has sent a message: ${message.text}`);
-    socketer.sockets.emit('MESSAGE_RECEIVED', message);
-  });
-});
+socketHub.initialize(server);
 
 module.exports = server;

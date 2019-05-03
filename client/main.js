@@ -1,7 +1,7 @@
 'use strict';
 
 const authentication = require('./authentication');
-const chatServerSocket = require('./chat_server_socket');
+const chatServerSocket = require('./transport/socket/chat_server/socket');
 const view = require('./view');
 
 window.addEventListener('load', () => {
