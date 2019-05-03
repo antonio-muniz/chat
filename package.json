@@ -1,8 +1,7 @@
 {
   "name": "chat",
   "version": "1.0.0",
-  "description": "A simple chat application using Node.js and PostgreSQL",
-  "main": "index.js",
+  "description": "A simple Node.js chat app.",
   "scripts": {
     "deploy": "git push heroku master",
     "dev": "nodemon",
@@ -23,7 +22,7 @@
   "license": "MIT",
   "devDependencies": {
     "eslint": "^5.16.0",
-    "mocha": "^6.0.2",
+    "mocha": "^6.1.4",
     "nodemon": "^1.18.10",
     "should": "^13.2.3",
     "supertest": "^4.0.2",
