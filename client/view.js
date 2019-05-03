@@ -1,5 +1,7 @@
 'use strict';
 
+const chatClientEvents = require('./transport/socket/chat_client_events');
+const chatServerSocket = require('./transport/socket/chat_server/socket');
 const user = require('./user');
 
 const elements = {};
@@ -35,12 +37,12 @@ function hideGoogleLoginButton() {
   elements.googleLoginButton.hidden = true;
 }
 
-function registerMessageInputSubmitListener(socket) {
+function registerMessageInputSubmitListener() {
   elements.messageInput.addEventListener('keyup', (event) => {
     if (event.key != 'Enter') return;
     if (!elements.messageInput.value) return;
 
-    socket.emit('MESSAGE_SENT', {
+    chatServerSocket.fire(chatClientEvents.MESSAGE_SENT, {
       text: elements.messageInput.value,
       sender: {
         id: user.getId(),
