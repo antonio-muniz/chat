@@ -1,13 +1,9 @@
 'use strict';
 
-const express = require('express');
-const http = require('http');
-const socketHub = require('./transport/socket/chat_client/socket_hub');
+const setupHttpServer = require('./transport/http/setup');
+const setupSockets = require('./transport/socket/setup');
 
-let app = express();
-app.use(express.static('dist'));
+let httpServer = setupHttpServer();
+setupSockets(httpServer);
 
-let server = http.createServer(app);
-socketHub.initialize(server);
-
-module.exports = server;
+module.exports = httpServer;
